@@ -7,15 +7,12 @@ import { MenuComponent } from './components/menu-component/menu-component';
 import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { ServiceDepartamentos } from './services/service.departamento';
+import { CreateComponent } from './components/create-component/create-component';
 
 @NgModule({
-  declarations: [App, HomeComponent, MenuComponent],
+  declarations: [App, HomeComponent, MenuComponent, CreateComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideHttpClient(),
-    ServiceDepartamentos
-  ],
+  providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(), ServiceDepartamentos],
   bootstrap: [App],
 })
-export class AppModule { }
+export class AppModule {}
