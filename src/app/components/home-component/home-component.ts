@@ -1,0 +1,24 @@
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { ServiceDepartamentos } from '../../services/service.departamento';
+import { Departamento } from '../../models/departamento';
+
+@Component({
+  selector: 'app-home-component',
+  standalone: false,
+  styleUrl: './home-component.css',
+  templateUrl: './home-component.html',
+})
+export class HomeComponent {
+
+  public departamentos!: Array<Departamento>;
+
+  constructor(
+    private _service: ServiceDepartamentos,
+    private _cdr: ChangeDetectorRef
+  ) { }
+
+  async ngOnInit(): Promise<void> {
+    this.departamentos = await this._service.getDepartamentosAsync();
+    this._cdr.detectChanges();
+  }
+}
