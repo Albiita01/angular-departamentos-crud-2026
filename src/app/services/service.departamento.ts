@@ -18,10 +18,11 @@ export class ServiceDepartamentos {
     async createDepartamento(departamento: Departamento): Promise<any> {
         // Convertimos el objeto recibido a JSON
         let json = JSON.stringify(departamento);
+        console.log(json);
         // Creamos un objeto header para el type
         let header = new HttpHeaders();
         // Incluimos la key de content-type
-        header = header.set("content-type", "applications/json");
+        header = header.set("content-type", "application/json");
         let request = "api/departamentos";
         return firstValueFrom(
             this._http.post(this.url + request, json, { headers: header })
