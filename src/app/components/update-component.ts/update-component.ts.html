@@ -1,0 +1,12 @@
+<h1>Editar departamento</h1>
+
+<form createform="ngForm">
+    <label>ID Departamento:</label>
+    <input value="{{departamento.numero}}" type="number" name="cajaId" #cajaid class="form-control" />
+    <label>Nombre:</label>
+    <input value="{{departamento.nombre}}" type="text" name="cajaNombre" #cajanombre class="form-control" />
+    <label>Localidad:</label>
+    <input value="{{departamento.localidad}}" type="text" name="cajaLocalidad" #cajalocalidad class="form-control" />
+    <br />
+    <button (click)="updateDepartamento()" class="btn btn-primary">Crear</button>
+</form>
